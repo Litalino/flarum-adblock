@@ -1,0 +1,51 @@
+{
+  "name": "litalino/flarum-adblock",
+  "description": "Add a Custom Header to Flarum",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^1.0.0"
+  },
+  "require-dev": {
+    "flarum/testing": "^1.0.0"
+  },
+  "authors": [
+    {
+      "name": "Litalino",
+      "email": "info@khatvongsong.vn",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Litalino\\Adblock\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "AdBlock",
+      "category": "",
+      "icon": {
+        "name": "fas fa-file-code",
+        "backgroundColor": "green",
+        "color": "white"
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  },
+  "require-dev": {
+    "flarum/phpstan": "*"
+  },
+  "scripts": {
+    "analyse:phpstan": "phpstan analyse",
+    "clear-cache:phpstan": "phpstan clear-result-cache"
+  },
+  "scripts-descriptions": {
+    "analyse:phpstan": "Run static analysis"
+  }
+}
