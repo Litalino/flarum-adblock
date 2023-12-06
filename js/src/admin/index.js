@@ -28,7 +28,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     .for('litalino-flarum-adlock')
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-div',
-      name: 'litalino-flarum-adlock.adBlock-div',
+      name: 'adBlock-div',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-div'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-div-help'),
