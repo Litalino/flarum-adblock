@@ -111,6 +111,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-help'),
       placeholder: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-placeholder'),
-      default: 'app.translator.trans('flarum-adblock.admin.adBlockNotice-content')',
+      default: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
     });
 });
