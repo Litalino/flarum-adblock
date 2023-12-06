@@ -2,15 +2,14 @@
   "name": "litalino/flarum-adblock",
   "description": "Add Adblock to Flarum",
   "keywords": [
-    "flarum"
+    "flarum",
+    "extiverse",
+    "adblock"
   ],
   "type": "flarum-extension",
   "license": "MIT",
   "require": {
     "flarum/core": "^1.0.0"
-  },
-  "require-dev": {
-    "flarum/testing": "^1.0.0"
   },
   "authors": [
     {
@@ -29,8 +28,8 @@
       "title": "AdBlock",
       "category": "",
       "icon": {
-        "name": "fas fa-file-code",
-        "backgroundColor": "green",
+        "name": "fas fa-ad",
+        "backgroundColor": "red",
         "color": "white"
       }
     },
