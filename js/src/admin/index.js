@@ -1,27 +1,14 @@
 /*
- * This file is part of justoverclock/flarum-adblock.
+ * This file is part of litalino/flarum-adblock.
  *
- * Copyright (c) 2021 Marco Colia.
- * https://flarum.it
+ * Copyright (c) 2023 Khatvongsong.
+ * https://khatvongsong.vn
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
 import app from 'flarum/app';
-
-/*function populateAdBlockAction() {
-  let options = {};
-
-  // add themes based on JS enum
-  Object.keys(Themes).forEach((theme, i) => {
-    if (theme === 'DEFAULT') return;
-
-    options[i] = app.translator.trans(`fof-nightmode.admin.settings.modal.theme_${theme.toLowerCase()}`);
-  });
-
-  return options;
-}*/
 
 app.initializers.add('litalino/flarum-adlock', () => {
   app.extensionData
@@ -63,7 +50,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
       help: app.translator.trans('flarum-adblock.admin.adBlockAction-help'),
       setting: 'litalino-flarum-adlock.adBlockAction',
       type: 'select',
-      //options: populateAdBlockAction(),
       options: {
 				'notice': app.translator.trans('flarum-adblock.admin.adBlockAction-notice'),
 				'message': app.translator.trans('flarum-adblock.admin.adBlockAction-message'),

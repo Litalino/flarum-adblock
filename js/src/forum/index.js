@@ -11,8 +11,6 @@
 import { extend } from 'flarum/extend';
 import app from 'flarum/app';
 import IndexPage from 'flarum/forum/components/IndexPage';
-import SignUpModal from 'flarum/forum/components/SignUpModal';
-import LogInModal from 'flarum/forum/components/LogInModal';
 
 app.initializers.add('litalino/flarum-adblock', () => {
 
@@ -31,21 +29,23 @@ app.initializers.add('litalino/flarum-adblock', () => {
             /////////////////////
             const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg';
             const url = app.forum.attribute('baseUrl');
+            const alt = app.translator.trans('flarum-adblock.admin.adBlock-alt');
 
-            const adBlock_div = app.forum.attribute('adBlock_div') ? app.forum.attribute('adBlockAction') : '#content' ;
-            const adBlock_url = app.forum.attribute('adBlock_url') ? app.forum.attribute('adBlock_url') : img ;
-            const adBlock_img = app.forum.attribute('adBlock_img') ? app.forum.attribute('adBlock_img') : url ;
+            const adBlock_div = app.forum.attribute('adBlock-div') ? app.forum.attribute('adBlockAction') : '#content' ;
+            const adBlock_url = app.forum.attribute('adBlock-url') ? app.forum.attribute('adBlock-url') : img ;
+            const adBlock_img = app.forum.attribute('adBlock-img') ? app.forum.attribute('adBlock-img') : url ;
+            const adBlock_alt = app.forum.attribute('adBlock-img') ? app.forum.attribute('adBlock-alt') : alt ;
 
-            //var my_div = document.getElementById(''+ adBlock_div +'');
-            var my_div = document.querySelectorAll('' + adBlock_div + '');
+            var my_div = document.getElementById(''+ adBlock_div +'');
+            //var my_div = document.querySelectorAll('' + adBlock_div + '');
 
             if (my_div) {
 
-                var div = document.createElement('div');
-                    div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
-                    div.className = 'samBannerUnit samAlignCenter';
+                var tag_div = document.createElement('div');
+                tag_div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
+                tag_div.className = 'samBannerUnit samAlignCenter';
 
-                my_elem.parentNode.insertBefore(div, my_div);
+                my_div.parentNode.insertBefore(tag_div, my_div);
             }
 
             /////////////////////
