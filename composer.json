@@ -29,6 +29,7 @@
       "Litalino\\Adblock\\": "src/"
     }
   },
+  "homepage": "https://khatvongsong.vn",
   "extra": {
     "branch-alias": {
       "dev-main": "1.x-dev"
