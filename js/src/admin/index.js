@@ -40,7 +40,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-img'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
-      default: app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg',
+      default: '',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-url',
@@ -48,6 +48,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-url'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-url-help'),
+      default: '',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-alt',
@@ -55,6 +56,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-alt'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-alt-help'),
+      default: '',
     })
     .registerSetting({
       label: app.translator.trans('flarum-adblock.admin.adBlockAction'),
@@ -68,11 +70,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
 				'backup': app.translator.trans('flarum-adblock.admin.adBlockAction-backup'),
 			},
       default: 'notice',
-      //setting: 'litalino-flarum-adlock.adBlockAction',
-      //name: 'adBlockAction',
-      //type: 'text',
-      //label: app.translator.trans('flarum-adblock.admin.adBlock-img'),
-      //help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportUsTitle',
@@ -80,7 +77,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
       help: app.translator.trans('flarum-adblock.admin.supportUsTitle-help'),
-      default: 'Please support us',
+      default: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportUsMessage',
@@ -88,7 +85,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
       help: app.translator.trans('flarum-adblock.admin.supportUsMessage-help'),
-      default: 'Please support us by disabling AdBlocker on our website.',
+      default: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportRedirectUrl',
@@ -114,6 +111,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-help'),
       placeholder: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-placeholder'),
-      default: '',
+      default: 'app.translator.trans('flarum-adblock.admin.adBlockNotice-content')',
     });
 });
