@@ -3,6 +3,7 @@
   "description": "Add Adblock to Flarum",
   "keywords": [
     "flarum",
+    "flarum extension",
     "extiverse",
     "adblock"
   ],
@@ -18,12 +19,20 @@
       "role": "Developer"
     }
   ],
+  "support": {
+    "issues": "https://github.com/litalino/flarum-adblock/issues",
+    "source": "https://github.com/litalino/flarum-adblock",
+    "forum": "https://discuss.flarum.org/d/33616-adblock-extension"
+  },
   "autoload": {
     "psr-4": {
       "Litalino\\Adblock\\": "src/"
     }
   },
   "extra": {
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    },
     "flarum-extension": {
       "title": "AdBlock",
       "category": "",
@@ -33,10 +42,34 @@
         "color": "white"
       }
     },
+    "flarum-cli": {
+      "modules": {
+        "admin": true,
+        "forum": true,
+        "js": true,
+        "jsCommon": false,
+        "css": true,
+        "locale": true,
+        "gitConf": true,
+        "githubActions": true,
+        "prettier": true,
+        "typescript": false,
+        "bundlewatch": false,
+        "backendTesting": false,
+        "editorConfig": true,
+        "styleci": true
+      }
+    },
     "flagrow": {
       "discuss": ""
     }
   },
+  "repositories": [
+      {
+          "type": "path",
+          "url": "../../*/*"
+      }
+  ],
   "require-dev": {
     "flarum/phpstan": "*"
   },
@@ -46,5 +79,7 @@
   },
   "scripts-descriptions": {
     "analyse:phpstan": "Run static analysis"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
