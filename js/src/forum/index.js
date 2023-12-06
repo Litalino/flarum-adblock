@@ -49,15 +49,13 @@ app.initializers.add('litalino/flarum-adblock', () => {
             }
 
             /////////////////////
-            var languger_adBlockNotice_content = app.translator.trans('flarum-adblock.admin.adBlockNotice-content');
-            console.log( languger_adBlockNotice_content );
 
             const adBlock_Action = app.forum.attribute('litalino-flarum-adlock.adBlockAction') ? app.forum.attribute('litalino-flarum-adlock.adBlockAction') : 'notice' ;
             const adBlock_supportUsTitle = app.forum.attribute('litalino-flarum-adlock.supportUsTitle') ? app.forum.attribute('litalino-flarum-adlock.supportUsTitle') : app.translator.trans('flarum-adblock.admin.supportUsTitle') ;
             const adBlock_supportUsMessage = app.forum.attribute('litalino-flarum-adlock.supportUsMessage') ? app.forum.attribute('litalino-flarum-adlock.supportUsMessage') : app.translator.trans('flarum-adblock.admin.supportUsMessage') ;
             const adBlock_supportRedirectUrl = app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') ? app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') : '' ;
             const adBlockNotice_element = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') : '#content' ;
-            const adBlockNotice_content = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') : languger_adBlockNotice_content ;
+            const adBlockNotice_content = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') : app.translator.trans('flarum-adblock.admin.adBlockNotice-content') ;
             //const adBlockNotice_method = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') : 'prepend' ;
             //const adBlockNotice_interval = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') : '1440' ;
 
