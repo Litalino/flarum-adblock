@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-import app from 'flarum/app';
+import app from 'flarum/admin/app';
 
 app.initializers.add('litalino/flarum-adlock', () => {
   app.extensionData
     .for('litalino-flarum-adlock')
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-div',
-      name: 'adBlock-div',
+      name: 'litalino-flarum-adlock.adBlock-div',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-div'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-div-help'),
@@ -23,7 +23,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-img',
-      name: 'adBlock-img',
+      name: 'litalino-flarum-adlock.adBlock-img',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-img'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
@@ -31,7 +31,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-url',
-      name: 'adBlock-url',
+      name: 'litalino-flarum-adlock.adBlock-url',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-url'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-url-help'),
@@ -39,7 +39,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-alt',
-      name: 'adBlock-alt',
+      name: 'litalino-flarum-adlock.adBlock-alt',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-alt'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-alt-help'),
@@ -59,7 +59,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportUsTitle',
-      name: 'supportUsTitle',
+      name: 'litalino-flarum-adlock.supportUsTitle',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
       help: app.translator.trans('flarum-adblock.admin.supportUsTitle-help'),
@@ -67,7 +67,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportUsMessage',
-      name: 'supportUsMessage',
+      name: 'litalino-flarum-adlock.supportUsMessage',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
       help: app.translator.trans('flarum-adblock.admin.supportUsMessage-help'),
@@ -75,7 +75,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportRedirectUrl',
-      name: 'supportRedirectUrl',
+      name: 'litalino-flarum-adlock.supportRedirectUrl',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportRedirectUrl'),
       help: app.translator.trans('flarum-adblock.admin.supportRedirectUrl-help'),
@@ -83,7 +83,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlockNotice-element',
-      name: 'adBlockNotice-element',
+      name: 'litalino-flarum-adlock.adBlockNotice-element',
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-element'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-element-help'),
@@ -91,7 +91,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlockNotice-content',
-      name: 'adBlockNotice-content',
+      name: 'litalino-flarum-adlock.adBlockNotice-content',
       type: 'textarea',
       rows: 6,
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),

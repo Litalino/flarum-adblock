@@ -27,18 +27,18 @@ app.initializers.add('litalino/flarum-adblock', () => {
             //window.onload = function () {
 
             /////////////////////
-            const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg';
+            const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-adblock/bg.jpg';
             const url = app.forum.attribute('baseUrl');
             const alt = app.translator.trans('flarum-adblock.admin.adBlock-alt');
 
-            const adBlock_div = app.forum.attribute('adBlock-div') ? app.forum.attribute('adBlockAction') : '#content' ;
-            const adBlock_url = app.forum.attribute('adBlock-url') ? app.forum.attribute('adBlock-url') : img ;
-            const adBlock_img = app.forum.attribute('adBlock-img') ? app.forum.attribute('adBlock-img') : url ;
-            const adBlock_alt = app.forum.attribute('adBlock-img') ? app.forum.attribute('adBlock-alt') : alt ;
+            const adBlock_div = app.forum.attribute('litalino-flarum-adlock.adBlock-div') ? app.forum.attribute('litalino-flarum-adlock.adBlock-div') : 'content' ;
+            const adBlock_url = app.forum.attribute('litalino-flarum-adlock.adBlock-url') ? app.forum.attribute('litalino-flarum-adlock.adBlock-url') : url ;
+            const adBlock_img = app.forum.attribute('litalino-flarum-adlock.adBlock-img') ? app.forum.attribute('litalino-flarum-adlock.adBlock-img') : img ;
+            const adBlock_alt = app.forum.attribute('litalino-flarum-adlock.adBlock-img') ? app.forum.attribute('litalino-flarum-adlock.adBlock-alt') : alt ;
 
             var my_div = document.getElementById(''+ adBlock_div +'');
             //var my_div = document.querySelectorAll('' + adBlock_div + '');
-
+            //console.log( my_div );
             if (my_div) {
 
                 var tag_div = document.createElement('div');
@@ -49,15 +49,17 @@ app.initializers.add('litalino/flarum-adblock', () => {
             }
 
             /////////////////////
+            var languger_adBlockNotice_content = app.translator.trans('flarum-adblock.admin.adBlockNotice-content');
+            console.log( languger_adBlockNotice_content );
 
-            const adBlock_Action = app.forum.attribute('adBlockAction') ? app.forum.attribute('adBlockAction') : 'notice' ;
-            const adBlock_supportUsTitle = app.forum.attribute('supportUsTitle') ? app.forum.attribute('supportUsTitle') : app.translator.trans('flarum-adblock.admin.supportUsTitle') ;
-            const adBlock_supportUsMessage = app.forum.attribute('supportUsMessage') ? app.forum.attribute('supportUsMessage') : app.translator.trans('flarum-adblock.admin.supportUsMessage') ;
-            const adBlock_supportRedirectUrl = app.forum.attribute('supportRedirectUrl') ? app.forum.attribute('supportRedirectUrl') : '' ;
-            const adBlockNotice_element = app.forum.attribute('adBlockNotice-element') ? app.forum.attribute('adBlockNotice-element') : '#content' ;
-            const adBlockNotice_content = app.forum.attribute('adBlockNotice-content') ? app.forum.attribute('adBlockNotice-content') : app.translator.trans('flarum-adblock.admin.adBlockNotice-content') ;
-            //const adBlockNotice_method = app.forum.attribute('adBlockNotice-method') ? app.forum.attribute('adBlockNotice-method') : 'prepend' ;
-            //const adBlockNotice_interval = app.forum.attribute('adBlockNotice-interval') ? app.forum.attribute('adBlockNotice-interval') : '1440' ;
+            const adBlock_Action = app.forum.attribute('litalino-flarum-adlock.adBlockAction') ? app.forum.attribute('litalino-flarum-adlock.adBlockAction') : 'notice' ;
+            const adBlock_supportUsTitle = app.forum.attribute('litalino-flarum-adlock.supportUsTitle') ? app.forum.attribute('litalino-flarum-adlock.supportUsTitle') : app.translator.trans('flarum-adblock.admin.supportUsTitle') ;
+            const adBlock_supportUsMessage = app.forum.attribute('litalino-flarum-adlock.supportUsMessage') ? app.forum.attribute('litalino-flarum-adlock.supportUsMessage') : app.translator.trans('flarum-adblock.admin.supportUsMessage') ;
+            const adBlock_supportRedirectUrl = app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') ? app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') : '' ;
+            const adBlockNotice_element = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') : '#content' ;
+            const adBlockNotice_content = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') : languger_adBlockNotice_content ;
+            //const adBlockNotice_method = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') : 'prepend' ;
+            //const adBlockNotice_interval = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') : '1440' ;
 
             var adBlockAction = adBlock_Action; //"notice";
             var supportUsTitle = adBlock_supportUsTitle; //"Please support us";
