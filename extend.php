@@ -30,6 +30,10 @@ return [
     (new Extend\Settings)
         ->serializeToForum('adBlock-img', 'litalino-flarum-adlock.adBlock-img'),
     (new Extend\Settings)
+        ->serializeToForum('adBlock-url', 'litalino-flarum-adlock.adBlock-url'),
+    (new Extend\Settings)
+        ->serializeToForum('adBlock-alt', 'litalino-flarum-adlock.adBlock-alt'),
+    (new Extend\Settings)
         ->serializeToForum('twitterIcon', 'litalino-flarum-adlock.twitterIcon'),
     (new Extend\Settings)
         ->serializeToForum('supportUsTitle', 'litalino-flarum-adlock.supportUsTitle'),

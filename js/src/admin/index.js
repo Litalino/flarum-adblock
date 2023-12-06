@@ -41,6 +41,20 @@ app.initializers.add('litalino/flarum-adlock', () => {
       help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
     })
     .registerSetting({
+      setting: 'litalino-flarum-adlock.adBlock-url',
+      name: 'adBlock-url',
+      type: 'text',
+      label: app.translator.trans('flarum-adblock.admin.adBlock-url'),
+      help: app.translator.trans('flarum-adblock.admin.adBlock-url-help'),
+    })
+    .registerSetting({
+      setting: 'litalino-flarum-adlock.adBlock-alt',
+      name: 'adBlock-alt',
+      type: 'text',
+      label: app.translator.trans('flarum-adblock.admin.adBlock-alt'),
+      help: app.translator.trans('flarum-adblock.admin.adBlock-alt-help'),
+    })
+    .registerSetting({
       label: app.translator.trans('flarum-adblock.admin.adBlockAction'),
       help: app.translator.trans('flarum-adblock.admin.adBlockAction-help'),
       setting: 'litalino-flarum-adlock.adBlockAction',

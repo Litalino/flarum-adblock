@@ -3,7 +3,11 @@ flarum-adblock:
     adBlock-div: Tab Div
     adBlock-div-help: content
     adBlock-img: Img
-    adBlock-img-help: here u can change the main title of your header
+    adBlock-img-help: here u can change the img of your header
+    adBlock-url: Url
+    adBlock-url-help: here u can change the url of your header
+    adBlock-alt: Alt
+    adBlock-alt-help: here u can change the alt of your header
     adBlockAction: Select notice, message, backup
     adBlockAction-help: here u can change the main title of your header
     adBlockAction-notice: notice

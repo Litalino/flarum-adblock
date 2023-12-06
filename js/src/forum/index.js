@@ -162,14 +162,18 @@ app.initializers.add('justoverclock/custom-header', () => {
             //window.onload = function () {
 
             /////////////////////
-            app.forum.attribute('headerTitle')
-            var my_elem = document.getElementById('');
+            const bg = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg';
+            const adBlock_div = app.forum.attribute('adBlock_div');
+            const adBlock_url = app.forum.attribute('adBlock_url');
+            const adBlock_img = app.forum.attribute('adBlock_img');
+
+            var my_div = document.getElementById(''+ adBlock_div +'');
 
             var div = document.createElement('div');
-                div.innerHTML = '<div class="samItem"> <a href="https://diathevang.vn" target="_blank" rel="nofollow"> <img src="https://ictsaigon.com.vn/storage/sliders/020123/tong-xa-kho.webp" alt="Banner"> </a> </div>';
+                div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
                 div.className = 'samBannerUnit samAlignCenter';
 
-            my_elem.parentNode.insertBefore(div, my_elem);
+            my_elem.parentNode.insertBefore(div, my_div);
             /////////////////////
             var adBlockAction = "notice";
             var supportUsTitle = "Please support us";
