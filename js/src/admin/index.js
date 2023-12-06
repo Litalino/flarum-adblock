@@ -80,6 +80,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
       help: app.translator.trans('flarum-adblock.admin.supportUsTitle-help'),
+      default: 'Please support us',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportUsMessage',
@@ -87,6 +88,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
       help: app.translator.trans('flarum-adblock.admin.supportUsMessage-help'),
+      default: 'Please support us by disabling AdBlocker on our website.',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.supportRedirectUrl',
@@ -102,13 +104,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-element'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-element-help'),
-    })
-    .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlockNotice-method',
-      name: 'adBlockNotice-method',
-      type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlockNotice-method'),
-      help: app.translator.trans('flarum-adblock.admin.adBlockNotice-method-help'),
+      default: '#content',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlockNotice-content',
@@ -118,6 +114,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-help'),
       placeholder: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-placeholder'),
-      default: 'Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>',
+      default: '',
     });
 });

@@ -3,28 +3,23 @@ flarum-adblock:
     adBlock-div: Tab Div, P, Span
     adBlock-div-help: Add Tag Img Banner '#content, .App-content, .IndexPage'
     adBlock-img: Img
-    adBlock-img-help: here u can change the img of your header
+    adBlock-img-help: Here u can change the img
     adBlock-url: Url
-    adBlock-url-help: here u can change the url of your header
+    adBlock-url-help: Here u can change the url
     adBlock-alt: Alt
-    adBlock-alt-help: here u can change the alt of your header
+    adBlock-alt-help: Here u can change the alt
     adBlockAction: Select notice, message, backup
-    adBlockAction-help: here u can change the main title of your header
+    adBlockAction-help: Here u can change
     adBlockAction-notice: notice
     adBlockAction-message: message
     adBlockAction-backup: backup
-    supportUsTitle: Header Slogan
-    supportUsTitle-help: Here you can change your slogan
-    supportUsMessage: Link to Twitter Page
-    supportUsMessage-help: Paste here a valid URL to your twitter page
-    supportRedirectUrl: Link to Twitter Page
-    supportRedirectUrl-help: Paste here a valid URL to your twitter page
-    adBlockNotice: Link to your facebook Page
-    adBlockNotice-help: Paste here a valid URL to your facebook page
-    adBlockNotice-element: Link to your youtube Page
-    adBlockNotice-method: Link to your GitHub Page
-    adBlockNotice-content: Content
-    adBlockNotice-help: Help
+    supportUsTitle: Please support us
+    supportUsTitle-help: Here you can change your Title
+    supportUsMessage: Please support us by disabling AdBlocker on our website.
+    supportUsMessage-help: Here u can change the message
+    supportRedirectUrl: Link
+    supportRedirectUrl-help: Paste here a valid URL
+    adBlockNotice-element: Add Tag Show notice '#content, .App-content, .IndexPage'
+    adBlockNotice-content: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>
+    adBlockNotice-content-help: Here u can change the content
     adBlockNotice-content-placeholder: Placeholder
-    adBlockNotice-interval: Right Button Text
-    adBlockNotice-views: Link for Left Button

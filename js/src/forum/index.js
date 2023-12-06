@@ -14,7 +14,7 @@ import IndexPage from 'flarum/forum/components/IndexPage';
 import SignUpModal from 'flarum/forum/components/SignUpModal';
 import LogInModal from 'flarum/forum/components/LogInModal';
 
-app.initializers.add('justoverclock/custom-header', () => {
+app.initializers.add('litalino/flarum-adblock', () => {
     extend(IndexPage.prototype, 'oncreate', function (){
       const headerImage = document.getElementById('StreamsHero-content')
       const bgImageUrl = app.forum.attribute('justoverclock-custom-header.headerBackgroundImage') || app.forum.attribute('baseUrl') + '/assets/extensions/justoverclock-custom-header/bg.jpg';
@@ -170,7 +170,7 @@ app.initializers.add('justoverclock/custom-header', () => {
 
             //var my_div = document.getElementById(''+ adBlock_div +'');
             var my_div = document.querySelectorAll('' + adBlock_div + '');
-            
+
             if (my_div) {
 
                 var div = document.createElement('div');
@@ -281,7 +281,7 @@ app.initializers.add('justoverclock/custom-header', () => {
                         }
                         console.log('adsBlocked : '+ adsBlocked );
                         //console.log(canDisplayNotice);
-                                    
+
                         if (! adsBlocked && canDisplayNotice) {
                             if (adBlockAction == 'notice') {
                                 //console.log( 'adBlockNotice.interval :  '+adBlockNotice.interval    );
@@ -359,24 +359,24 @@ app.initializers.add('justoverclock/custom-header', () => {
 
             });
             $(document).on('samInitDetection', function() {
-                initDetection();                                 
+                initDetection();
             });
             $(document).trigger('samInitDetection');
-            
+
             function create_adblock_Cookie(name, value, days) {
                 if (days) {
                 var date = new Date();
                 date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
                 var expires = "; expires=" + date.toGMTString();
                 } else {
-                    var expires = ''; 
+                    var expires = '';
                 }
                 //var expires = '';
                 //document.cookie = name + '=' + value + expires + '; path=/';
                 //document.cookie = name + "=" + value + expires + "sameSite=Session; Secure"; path=/";
                 document.cookie = name + '=' + value + '; ' + expires + '; ' + 'sameSite=Session; Secure'; path='/';
             }
-        
+
             function read_adblock_Cookie(name) {
                 var nameEQ = name + "=";
                 var ca = document.cookie.split(";");
@@ -393,7 +393,7 @@ app.initializers.add('justoverclock/custom-header', () => {
 
     });
 });
-extend(IndexPage.prototype, 'oncreate', function (vnode) {
+/*extend(IndexPage.prototype, 'oncreate', function (vnode) {
     const welcomeHero = document.getElementsByClassName('Hero WelcomeHero');
     // nascondiamo la welcome hero nella pagina principale
     if (app.current.matches(IndexPage)) {
@@ -401,4 +401,4 @@ extend(IndexPage.prototype, 'oncreate', function (vnode) {
             welcomeHero[i].style.display = 'none';
         }
     }
-});
+});*/

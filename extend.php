@@ -34,7 +34,7 @@ return [
     (new Extend\Settings)
         ->serializeToForum('adBlock-alt', 'litalino-flarum-adlock.adBlock-alt'),
     (new Extend\Settings)
-        ->serializeToForum('adBlock-Action', 'litalino-flarum-adlock.adBlock-Action'),
+        ->serializeToForum('adBlockAction', 'litalino-flarum-adlock.adBlockAction'),
     (new Extend\Settings)
         ->serializeToForum('supportUsTitle', 'litalino-flarum-adlock.supportUsTitle'),
     (new Extend\Settings)
@@ -43,8 +43,6 @@ return [
         ->serializeToForum('supportRedirectUrl', 'litalino-flarum-adlock.supportRedirectUrl'),
     (new Extend\Settings)
         ->serializeToForum('adBlockNotice-element', 'litalino-flarum-adlock.adBlockNotice-element'),
-    (new Extend\Settings)
-        ->serializeToForum('adBlockNotice-method', 'litalino-flarum-adlock.adBlockNotice-method'),
     (new Extend\Settings)
         ->serializeToForum('adBlockNotice-content', 'litalino-flarum-adlock.adBlockNotice-content'),
 ];
