@@ -1,0 +1,176 @@
+.samAdBlockDetected .sideNavContainer, .samAdBlockDetected .FlarumBlogItem,  .samAdBlockDetected .FlarumBlogOverview,  .samAdBlockDetected .DiscussionPage, .samAdBlockDetected .TagsPage {
+    opacity: 0.25;
+}
+.samCodeUnit[data-position="container_content_above"], .samBannerUnit[data-position="container_content_above"], .samTextUnit[data-position="container_content_above"], .samCodeUnit[data-position="forum_overview_top"], .samBannerUnit[data-position="forum_overview_top"], .samTextUnit[data-position="forum_overview_top"] {
+    margin-top: 0;
+}
+.samUnitWrapper .samTextUnit {
+    background: none;
+    border: 0;
+    border-radius: 0
+}
+
+.samUnitWrapper.block-row>div {
+    padding: 0;
+    margin: 0
+}
+
+.samUnitWrapper.structItem>div,.samUnitWrapper.message>div {
+    margin: 0 auto;
+    padding: 10px
+}
+
+.samMediaViewContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 99
+}
+
+.samAlignLeft {
+    text-align: left
+}
+
+.samAlignRight {
+    text-align: right;
+    margin: 10px 0 10px auto
+}
+
+.samCarousel.samAlignRight {
+    margin: 0 0 0 auto
+}
+
+.samAlignCenter {
+    text-align: center;
+    margin: 10px auto
+}
+
+.samCarousel.samAlignCenter {
+    margin: 0 auto
+}
+
+.samPositionPreview {
+    background: #f9c479;
+    border-radius: 4px;
+    border: 1px solid #f2930d;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    color: #141414
+}
+
+.samCustomSize {
+    position: relative
+}
+
+.samCustomSize .samBannerUnit .samItem {
+    height: 100%
+}
+
+.samCustomSize .samAdminActions {
+    position: absolute;
+    left: 5px;
+    bottom: 0
+}
+
+.samAdminActions {
+    margin: 5px 0
+}
+
+.samAdminActions .button {
+    padding: 0 10px;
+    margin-right: 1px
+}
+
+.samAdminActions .button:last-child {
+    margin-right: 0
+}
+
+.samBackground {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover
+}
+
+.samBackgroundItem {
+    position: fixed;
+    height: 100%
+}
+
+.samAlignLeft[data-position^="post_above_content_"] {
+    float: left;
+    margin: 0 10px 0 0
+}
+
+.samAlignRight[data-position^="post_above_content_"] {
+    float: right;
+    margin: 0 0 0 10px;
+    width: auto
+}
+
+.samAlignRight[data-position^="node_title_above_"] {
+    float: right;
+    margin: 0 0 0 10px;
+    width: auto
+}
+
+img[data-xf-init="sam-lazy"] {
+    display: none
+}
+
+.samAdBlockDetected .p-body-pageContent,.samAdBlockDetected .p-body-sideNav,.samAdBlockDetected .p-body-sidebar {
+    opacity: 0.15
+}
+
+#samNotice {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    background:  var(--alert-error-bg);
+    border: 1px solid var(--alert-error-bg);
+    border-radius: 4px;
+    padding: 10px;
+    display: none;
+    margin: 10px 0
+}
+
+#samNotice span sup {
+    color: #dedede;
+}
+
+#samNotice #samDismiss {
+    font-size: 30px;
+    color: #f2f8f2;
+    text-decoration: none;
+    float: right;
+    cursor: pointer;
+     line-height: 1
+}
+
+#samNotice #samDismiss:hover {
+    text-decoration: none
+}
+
+.samVideoOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #000;
+    opacity: 0.5;
+    top: 0
+}
+.samItem img {
+    max-height: 90px;
+    max-width: 100%;background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#samNotice span:first-child:first-letter {
+  color: #903; 
+  font-family: Georgia;
+  initial-letter: 2;
+}
