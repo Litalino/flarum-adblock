@@ -1,8 +1,8 @@
 /*
- * This file is part of justoverclock/custom-header.
+ * This file is part of litalino/flarum-adblock.
  *
- * Copyright (c) 2021 Marco Colia.
- * https://flarum.it
+ * Copyright (c) 2023 Khatvongsong.
+ * https://khatvongsong.vn
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.

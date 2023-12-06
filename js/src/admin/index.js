@@ -12,7 +12,7 @@ import app from 'flarum/admin/app';
 
 app.initializers.add('litalino/flarum-adlock', () => {
   app.extensionData
-    .for('litalino-flarum-adlock')
+    .for('litalino-adlock')
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-div',
       name: 'litalino-flarum-adlock.adBlock-div',
