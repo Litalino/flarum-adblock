@@ -1,7 +1,7 @@
 flarum-adblock:
   admin:
     adBlock-div: Tab Div, P, Span
-    adBlock-div-help: Add Tag Img Banner '#content, .App-content, .IndexPage'
+    adBlock-div-help: Add Tag Img Banner '#content, .App-content, .IndexPage, container'
     adBlock-img: Img
     adBlock-img-help: Here u can change the img
     adBlock-url: Url
@@ -19,7 +19,7 @@ flarum-adblock:
     supportUsMessage-help: Here u can change the message
     supportRedirectUrl: Link
     supportRedirectUrl-help: Paste here a valid URL
-    adBlockNotice-element: Add Tag Show notice '#content, .App-content, .IndexPage'
+    adBlockNotice-element: Add Tag Show notice '#content, .App-content, .IndexPage, container'
     adBlockNotice-content: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>
     adBlockNotice-content-help: Here u can change the content
     adBlockNotice-content-placeholder: Placeholder
