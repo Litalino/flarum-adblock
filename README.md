@@ -1,20 +1,20 @@
 # CustomHeader
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](http://poser.pugx.org/litalino/flarum-adblock/v)](https://packagist.org/packages/litalino/flarum-adblock) [![Total Downloads](http://poser.pugx.org/litalino/flarum-adblock/downloads)](https://packagist.org/packages/litalino/flarum-adblock) [![Support Me](https://img.shields.io/badge/Donate-Support%20My%20Work-orange)](https://github.com/sponsors/justoverclockl)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/litalino/flarum-more-bbcode.svg)](https://packagist.org/packages/litalino/flarum-adblock) [![Total Downloads](https://img.shields.io/packagist/dt/litalino/flarum-more-bbcode.svg)](https://packagist.org/packages/litalino/flarum-adblock)
 
 ### Header for guest
 
-S
+
 ### Header for User
 
 
 
 
-A [Flarum](http://flarum.org) extension. Add a Custom Header to Flarum, u can customize social icon, buttons text and link, Title and slogan directly into the extension settings.
+A [Flarum](http://flarum.org) extension. Add a Adblock to Flarum, u can customize directly into the extension settings.
 
 ### Background
 
-To customize your header background simply change the `bg.jpg` image into the assets folder
+To customize your banner img simply change the `bg.jpg` image into the assets folder
 
 ### Installation
 
