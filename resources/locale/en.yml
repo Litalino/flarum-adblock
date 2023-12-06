@@ -1,7 +1,7 @@
 flarum-adblock:
   admin:
-    adBlock-div: Tab Div
-    adBlock-div-help: content
+    adBlock-div: Tab Div, P, Span
+    adBlock-div-help: Add Tag Img Banner '#content, .App-content, .IndexPage'
     adBlock-img: Img
     adBlock-img-help: here u can change the img of your header
     adBlock-url: Url

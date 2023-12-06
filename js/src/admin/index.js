@@ -32,6 +32,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-div'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-div-help'),
+      default: '#content',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-img',
@@ -39,6 +40,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.adBlock-img'),
       help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
+      default: app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlock-url',
@@ -92,6 +94,7 @@ app.initializers.add('litalino/flarum-adlock', () => {
       type: 'text',
       label: app.translator.trans('flarum-adblock.admin.supportRedirectUrl'),
       help: app.translator.trans('flarum-adblock.admin.supportRedirectUrl-help'),
+      default: '',
     })
     .registerSetting({
       setting: 'litalino-flarum-adlock.adBlockNotice-element',
@@ -115,5 +118,6 @@ app.initializers.add('litalino/flarum-adlock', () => {
       label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
       help: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-help'),
       placeholder: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-placeholder'),
+      default: 'Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>',
     });
 });

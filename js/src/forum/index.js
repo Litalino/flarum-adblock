@@ -150,7 +150,8 @@ app.initializers.add('justoverclock/custom-header', () => {
         }
     });
 
-    extend(Page.prototype, 'oninit', function () {
+    extend(IndexPage.prototype, 'oninit', function () {
+
         var XF = window.XF || {};
         XF.samViewCountMethod = "impression";
         XF.samServerTime = Math.floor(Date.now() / 1000);
@@ -162,27 +163,42 @@ app.initializers.add('justoverclock/custom-header', () => {
             //window.onload = function () {
 
             /////////////////////
-            const bg = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg';
+            //const bg = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-flarum-adblock/bg.jpg';
             const adBlock_div = app.forum.attribute('adBlock_div');
             const adBlock_url = app.forum.attribute('adBlock_url');
             const adBlock_img = app.forum.attribute('adBlock_img');
 
-            var my_div = document.getElementById(''+ adBlock_div +'');
+            //var my_div = document.getElementById(''+ adBlock_div +'');
+            var my_div = document.querySelectorAll('' + adBlock_div + '');
+            
+            if (my_div) {
 
-            var div = document.createElement('div');
-                div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
-                div.className = 'samBannerUnit samAlignCenter';
+                var div = document.createElement('div');
+                    div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
+                    div.className = 'samBannerUnit samAlignCenter';
 
-            my_elem.parentNode.insertBefore(div, my_div);
+                my_elem.parentNode.insertBefore(div, my_div);
+            }
+
             /////////////////////
-            var adBlockAction = "notice";
-            var supportUsTitle = "Please support us";
-            var supportUsMessage = "Please support us by disabling AdBlocker on our website.";
-            var supportRedirectUrl = "";
+
+            const adBlock_Action = app.forum.attribute('adBlockAction');
+            const adBlock_supportUsTitle = app.forum.attribute('supportUsTitle');
+            const adBlock_supportUsMessage = app.forum.attribute('supportUsMessage');
+            const adBlock_supportRedirectUrl = app.forum.attribute('supportRedirectUrl');
+            const adBlockNotice_element = app.forum.attribute('adBlockNotice-element');
+            const adBlockNotice_content = app.forum.attribute('adBlockNotice-content');
+            //const adBlockNotice_method = app.forum.attribute('adBlockNotice-method');
+            //const adBlockNotice_interval = app.forum.attribute('adBlockNotice-interval');
+
+            var adBlockAction = adBlock_Action;  //"notice";
+            var supportUsTitle = adBlock_supportUsTitle; //"Please support us";
+            var supportUsMessage = adBlock_supportUsMessage; //"Please support us by disabling AdBlocker on our website.";
+            var supportRedirectUrl = adBlock_supportRedirectUrl; //"";
             var adBlockNotice = {
-                element: '#content',
+                element: adBlockNotice_element, //'#content',
                 method: 'prepend',
-                content: "Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
+                content: adBlockNotice_content, //"Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
                 interval: 1440,
                 views: 1
             };

@@ -25,7 +25,7 @@ return [
         ->css(__DIR__.'/resources/less/admin.less'),
     new Extend\Locales(__DIR__.'/resources/locale'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.headerBackgroundImage', 'litalino-flarum-adlock.headerBackgroundImage')
+        //->serializeToForum('litalino-flarum-adlock.headerBackgroundImage', 'litalino-flarum-adlock.headerBackgroundImage')
         ->serializeToForum('adBlock-div', 'litalino-flarum-adlock.adBlock-div'),
     (new Extend\Settings)
         ->serializeToForum('adBlock-img', 'litalino-flarum-adlock.adBlock-img'),
