@@ -1,6 +1,6 @@
 # CustomHeader
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/litalino/flarum-more-bbcode.svg)](https://packagist.org/packages/litalino/flarum-adblock) [![Total Downloads](https://img.shields.io/packagist/dt/litalino/flarum-more-bbcode.svg)](https://packagist.org/packages/litalino/flarum-adblock)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/litalino/flarum-adblock.svg)](https://packagist.org/packages/litalino/flarum-adblock) [![Total Downloads](https://img.shields.io/packagist/dt/litalino/flarum-adblock.svg)](https://packagist.org/packages/litalino/flarum-adblock)
 
 ### Header for guest
 
