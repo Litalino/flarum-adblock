@@ -25,23 +25,23 @@ return [
     new Extend\Locales(__DIR__.'/locale'),
     
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlock-div', 'litalino-flarum-adlock.adBlock-div'),
+        ->serializeToForum('litalino-adblock.adblock-div', 'litalino-adblock.adblock-div'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlock-img', 'litalino-flarum-adlock.adBlock-img'),
+        ->serializeToForum('litalino-adblock.adblock-img', 'litalino-adblock.adblock-img'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlock-url', 'litalino-flarum-adlock.adBlock-url'),
+        ->serializeToForum('litalino-adblock.adblock-url', 'litalino-adblock.adblock-url'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlock-alt', 'litalino-flarum-adlock.adBlock-alt'),
+        ->serializeToForum('litalino-adblock.adblock-alt', 'litalino-adblock.adblock-alt'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlockAction', 'litalino-flarum-adlock.adBlockAction'),
+        ->serializeToForum('litalino-adblock.adblock-action', 'litalino-adblock.adblock-action'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.supportUsTitle', 'litalino-flarum-adlock.supportUsTitle'),
+        ->serializeToForum('litalino-adblock.adblock-supportUsTitle', 'litalino-adblock.adblock-supportUsTitle'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.supportUsMessage', 'litalino-flarum-adlock.supportUsMessage'),
+        ->serializeToForum('litalino-adblock.adblock-supportUsMessage', 'litalino-adblock.adblock-supportUsMessage'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.supportRedirectUrl', 'litalino-flarum-adlock.supportRedirectUrl'),
+        ->serializeToForum('litalino-adblock.adblock-supportRedirectUrl', 'litalino-adblock.adblock-supportRedirectUrl'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlockNotice-element', 'litalino-flarum-adlock.adBlockNotice-element'),
+        ->serializeToForum('litalino-adblock.adblock-notice-element', 'litalino-adblock.adblock-notice-element'),
     (new Extend\Settings)
-        ->serializeToForum('litalino-flarum-adlock.adBlockNotice-content', 'litalino-flarum-adlock.adBlockNotice-content'),
+        ->serializeToForum('litalino-adblock.adblock-notice-content', 'litalino-adblock.adblock-notice-content'),
 ];

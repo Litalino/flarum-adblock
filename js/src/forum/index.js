@@ -1,5 +1,5 @@
 /*
- * This file is part of litalino/flarum-adblock.
+ * This file is part of litalino/adblock.
  *
  * Copyright (c) 2023 Khatvongsong.
  * https://khatvongsong.vn
@@ -27,14 +27,14 @@ app.initializers.add('litalino/flarum-adblock', () => {
             //window.onload = function () {
 
             /////////////////////
-            const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-adblock/bg.jpg';
+            const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-adblock/banner.png';
             const url = app.forum.attribute('baseUrl');
-            const alt = app.translator.trans('flarum-adblock.admin.adBlock-alt');
+            const alt = app.translator.trans('adblock.admin.adblock-alt');
 
-            const adBlock_div = app.forum.attribute('litalino-flarum-adlock.adBlock-div') ? app.forum.attribute('litalino-flarum-adlock.adBlock-div') : 'content' ;
-            const adBlock_url = app.forum.attribute('litalino-flarum-adlock.adBlock-url') ? app.forum.attribute('litalino-flarum-adlock.adBlock-url') : url ;
-            const adBlock_img = app.forum.attribute('litalino-flarum-adlock.adBlock-img') ? app.forum.attribute('litalino-flarum-adlock.adBlock-img') : img ;
-            const adBlock_alt = app.forum.attribute('litalino-flarum-adlock.adBlock-img') ? app.forum.attribute('litalino-flarum-adlock.adBlock-alt') : alt ;
+            const adBlock_div = app.forum.attribute('litalino-adblock.adblock-div') ? app.forum.attribute('litalino-adblock.adblock-div') : 'content' ;
+            const adBlock_url = app.forum.attribute('litalino-adblock.adblock-url') ? app.forum.attribute('litalino-adblock.adblock-url') : url ;
+            const adBlock_img = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-img') : img ;
+            const adBlock_alt = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-alt') : alt ;
 
             var my_div = document.getElementById(''+ adBlock_div +'');
             //var my_div = document.querySelectorAll('' + adBlock_div + '');
@@ -49,24 +49,34 @@ app.initializers.add('litalino/flarum-adblock', () => {
             }
 
             /////////////////////
+            var text_notice = 'notice';
+            var text_supportUsTitle = 'Please support us';
+            var text_supportUsMessage = 'Please support us by disabling AdBlocker on our website.';
+            var text_url = '';
+            var text_element = "#content";
+            var text_content_sup = 'Press × to turn off notifications and show content.';
+            var text_content =
+              "Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!";
 
-            const adBlock_Action = app.forum.attribute('litalino-flarum-adlock.adBlockAction') ? app.forum.attribute('litalino-flarum-adlock.adBlockAction') : 'notice' ;
-            const adBlock_supportUsTitle = app.forum.attribute('litalino-flarum-adlock.supportUsTitle') ? app.forum.attribute('litalino-flarum-adlock.supportUsTitle') : app.translator.trans('flarum-adblock.admin.supportUsTitle') ;
-            const adBlock_supportUsMessage = app.forum.attribute('litalino-flarum-adlock.supportUsMessage') ? app.forum.attribute('litalino-flarum-adlock.supportUsMessage') : app.translator.trans('flarum-adblock.admin.supportUsMessage') ;
-            const adBlock_supportRedirectUrl = app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') ? app.forum.attribute('litalino-flarum-adlock.supportRedirectUrl') : '' ;
-            const adBlockNotice_element = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-element') : '#content' ;
-            const adBlockNotice_content = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-content') : app.translator.trans('flarum-adblock.admin.adBlockNotice-content') ;
-            //const adBlockNotice_method = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-method') : 'prepend' ;
-            //const adBlockNotice_interval = app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') ? app.forum.attribute('litalino-flarum-adlock.adBlockNotice-interval') : '1440' ;
+            var adBlock_notice_content_sup = app.forum.attribute('litalino-adblock.adblock-notice-content-sup') ? ' <sup><i>('+ app.forum.attribute('litalino-adblock.adblock-notice-content-sup') +')</i></sup>' : ' <sup><i>('+ text_content_sup +')</i></sup>';
 
-            var adBlockAction = adBlock_Action; //"notice";
+            const adBlock_action = app.forum.attribute('litalino-adblock.adblock-action') ? app.forum.attribute('litalino-adblock.adblock-action') : text_notice ;
+            const adBlock_supportUsTitle = app.forum.attribute('litalino-adblock.adblock-supportUsTitle') ? app.forum.attribute('litalino-adblock.adblock-supportUsTitle') : text_supportUsTitle ;
+            const adBlock_supportUsMessage = app.forum.attribute('litalino-adblock.adblock-supportUsMessage') ? app.forum.attribute('litalino-adblock.adblock-supportUsMessage') :text_supportUsMessage ;
+            const adBlock_supportRedirectUrl = app.forum.attribute('litalino-adblock.adblock-supportRedirectUrl') ? app.forum.attribute('litalino-adblock.adblock-supportRedirectUrl') : text_url ;
+            const adBlock_notice_element = app.forum.attribute('litalino-adblock.adblock-notice-element') ? app.forum.attribute('litalino-adblock.adblock-notice-element') : text_element ;
+            const adBlock_notice_content = app.forum.attribute('litalino-adblock.adblock-notice-content') ? app.forum.attribute('litalino-adblock.adblock-notice-content') + adBlock_notice_content_sup : text_content + adBlock_notice_content_sup ;
+            //const adBlock_notice_method = app.forum.attribute('litalino-adblock.adblock-notice-method') ? app.forum.attribute('litalino-adblock.adblock-notice-method') : 'prepend' ;
+            //const adBlock_notice_interval = app.forum.attribute('litalino-adblock.adblock-notice-interval') ? app.forum.attribute('litalino-adblock.adblock-notice-interval') : '1440' ;
+
+            var adBlockAction = adBlock_action; //"notice";
             var supportUsTitle = adBlock_supportUsTitle; //"Please support us";
             var supportUsMessage = adBlock_supportUsMessage; //"Please support us by disabling AdBlocker on our website.";
             var supportRedirectUrl = adBlock_supportRedirectUrl; //"";
             var adBlockNotice = {
-                element: adBlockNotice_element, //'#content',
+                element: adBlock_notice_element, //'#content',
                 method: 'prepend',
-                content: adBlockNotice_content, //"Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
+                content: adBlock_notice_content, //"Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
                 interval: 1440,
                 views: 1
             };

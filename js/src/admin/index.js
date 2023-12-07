@@ -1,5 +1,5 @@
 /*
- * This file is part of litalino/flarum-adblock.
+ * This file is part of litalino/adblock.
  *
  * Copyright (c) 2023 Khatvongsong.
  * https://khatvongsong.vn
@@ -10,93 +10,101 @@
 
 import app from 'flarum/admin/app';
 
-app.initializers.add('litalino/flarum-adlock', () => {
+app.initializers.add('litalino/flarum-adblock', () => {
   app.extensionData
-    .for('litalino-adlock')
+    .for('litalino-adblock')
     .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlock-div',
-      name: 'litalino-flarum-adlock.adBlock-div',
+      setting: 'litalino-adblock.adblock-div',
+      name: 'litalino-adblock.adblock-div',
       type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlock-div'),
-      help: app.translator.trans('flarum-adblock.admin.adBlock-div-help'),
-      default: '#content',
-    })
-    .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlock-img',
-      name: 'litalino-flarum-adlock.adBlock-img',
-      type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlock-img'),
-      help: app.translator.trans('flarum-adblock.admin.adBlock-img-help'),
+      label: app.translator.trans('adblock.admin.adblock-div'),
+      placeholder: app.translator.trans('adblock.admin.adblock-div-placeholder'),
       default: '',
     })
     .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlock-url',
-      name: 'litalino-flarum-adlock.adBlock-url',
+      setting: 'litalino-adblock.adblock-img',
+      name: 'litalino-adblock.adblock-img',
       type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlock-url'),
-      help: app.translator.trans('flarum-adblock.admin.adBlock-url-help'),
+      label: app.translator.trans('adblock.admin.adblock-img'),
+      placeholder: app.translator.trans('adblock.admin.adblock-img-placeholder'),
       default: '',
     })
     .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlock-alt',
-      name: 'litalino-flarum-adlock.adBlock-alt',
+      setting: 'litalino-adblock.adblock-url',
+      name: 'litalino-adblock.adblock-url',
       type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlock-alt'),
-      help: app.translator.trans('flarum-adblock.admin.adBlock-alt-help'),
+      label: app.translator.trans('adblock.admin.adblock-url'),
+      placeholder: app.translator.trans('adblock.admin.adblock-url-placeholder'),
       default: '',
     })
     .registerSetting({
-      label: app.translator.trans('flarum-adblock.admin.adBlockAction'),
-      help: app.translator.trans('flarum-adblock.admin.adBlockAction-help'),
-      setting: 'litalino-flarum-adlock.adBlockAction',
+      setting: 'litalino-adblock.adblock-alt',
+      name: 'litalino-adblock.adblock-alt',
+      type: 'text',
+      label: app.translator.trans('adblock.admin.adblock-alt'),
+      placeholder: app.translator.trans('adblock.admin.adblock-alt-placeholder'),
+      default: '',
+    })
+    .registerSetting({
+      label: app.translator.trans('adblock.admin.adblock-action'),
+      help: app.translator.trans('adblock.admin.adblock-action-help'),
+      setting: 'litalino-adblock.adblock-action',
       type: 'select',
       options: {
-				'notice': app.translator.trans('flarum-adblock.admin.adBlockAction-notice'),
-				'message': app.translator.trans('flarum-adblock.admin.adBlockAction-message'),
-				'backup': app.translator.trans('flarum-adblock.admin.adBlockAction-backup'),
+				'notice': app.translator.trans('adblock.admin.adblock-action-notice'),
+				'message': app.translator.trans('adblock.admin.adblock-action-message'),
+				'backup': app.translator.trans('adblock.admin.adblock-action-backup'),
 			},
       default: 'notice',
     })
     .registerSetting({
-      setting: 'litalino-flarum-adlock.supportUsTitle',
-      name: 'litalino-flarum-adlock.supportUsTitle',
+      setting: 'litalino-adblock.adblock-supportUsTitle',
+      name: 'litalino-adblock.adblock-supportUsTitle',
       type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
-      help: app.translator.trans('flarum-adblock.admin.supportUsTitle-help'),
-      default: app.translator.trans('flarum-adblock.admin.supportUsTitle'),
-    })
-    .registerSetting({
-      setting: 'litalino-flarum-adlock.supportUsMessage',
-      name: 'litalino-flarum-adlock.supportUsMessage',
-      type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
-      help: app.translator.trans('flarum-adblock.admin.supportUsMessage-help'),
-      default: app.translator.trans('flarum-adblock.admin.supportUsMessage'),
-    })
-    .registerSetting({
-      setting: 'litalino-flarum-adlock.supportRedirectUrl',
-      name: 'litalino-flarum-adlock.supportRedirectUrl',
-      type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.supportRedirectUrl'),
-      help: app.translator.trans('flarum-adblock.admin.supportRedirectUrl-help'),
+      label: app.translator.trans('adblock.admin.adblock-supportUsTitle'),
+      placeholder: app.translator.trans('adblock.admin.adblock-supportUsTitle-placeholder'),
       default: '',
     })
     .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlockNotice-element',
-      name: 'litalino-flarum-adlock.adBlockNotice-element',
+      setting: 'litalino-adblock.adblock-supportUsMessage',
+      name: 'litalino-adblock.adblock-supportUsMessage',
       type: 'text',
-      label: app.translator.trans('flarum-adblock.admin.adBlockNotice-element'),
-      help: app.translator.trans('flarum-adblock.admin.adBlockNotice-element-help'),
-      default: '#content',
+      label: app.translator.trans('adblock.admin.adblock-supportUsMessage'),
+      placeholder: app.translator.trans('adblock.admin.adblock-supportUsMessage-placeholder'),
+      default: '',
     })
     .registerSetting({
-      setting: 'litalino-flarum-adlock.adBlockNotice-content',
-      name: 'litalino-flarum-adlock.adBlockNotice-content',
+      setting: 'litalino-adblock.adblock-supportRedirectUrl',
+      name: 'litalino-adblock.adblock-supportRedirectUrl',
+      type: 'text',
+      label: app.translator.trans('adblock.admin.adblock-supportRedirectUrl'),
+      placeholder: app.translator.trans('adblock.admin.adblock-supportRedirectUrl-placeholder'),
+      default: '',
+    })
+    .registerSetting({
+      setting: 'litalino-adblock.adblock-notice-element',
+      name: 'litalino-adblock.adblock-notice-element',
+      type: 'text',
+      label: app.translator.trans('adblock.admin.adblock-notice-element'),
+      placeholder: app.translator.trans('adblock.admin.adblock-notice-element-placeholder'),
+      default: '',
+    })
+    .registerSetting({
+      setting: 'litalino-adblock.adblock-notice-content',
+      name: 'litalino-adblock.adblock-notice-content',
       type: 'textarea',
-      rows: 6,
-      label: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
-      help: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-help'),
-      placeholder: app.translator.trans('flarum-adblock.admin.adBlockNotice-content-placeholder'),
-      default: app.translator.trans('flarum-adblock.admin.adBlockNotice-content'),
+      rows: 4,
+      label: app.translator.trans('adblock.admin.adblock-notice-content'),
+      help: app.translator.trans('adblock.admin.adblock-notice-content-help'),
+      placeholder: app.translator.trans('adblock.admin.adblock-notice-content-placeholder'),
+      default: '',
+    })
+    .registerSetting({
+      setting: 'litalino-adblock.adblock-notice-content-sup',
+      name: 'litalino-adblock.adblock-notice-content-sup',
+      type: 'text',
+      label: app.translator.trans('adblock.admin.adblock-notice-content-sup'),
+      placeholder: app.translator.trans('adblock.admin.adblock-notice-content-placeholder'),
+      default: '',
     });
 });

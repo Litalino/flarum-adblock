@@ -1,25 +1,28 @@
-flarum-adblock:
+adblock:
   admin:
-    adBlock-div: Tag
-    adBlock-div-help: Add the banner tag where the html code appears '#content, .App-content, .IndexPage, container'
-    adBlock-img: Img
-    adBlock-img-help: Here u can change the link img
-    adBlock-url: Url
-    adBlock-url-help: Here u can change the link url
-    adBlock-alt: Alt
-    adBlock-alt-help: Here u can change the alt
-    adBlockAction: Select default 'notice, message, backup'
-    adBlockAction-help: Here u can change
-    adBlockAction-notice: notice
-    adBlockAction-message: message
-    adBlockAction-backup: backup
-    supportUsTitle: Please support us
-    supportUsTitle-help: Here you can change your Title
-    supportUsMessage: Please support us by disabling AdBlocker on our website.
-    supportUsMessage-help: Here u can change the message
-    supportRedirectUrl: Link
-    supportRedirectUrl-help: Paste a valid URL here or leave it blank
-    adBlockNotice-element: Add Tag where notifications are displayed '#content, .App-content, .IndexPage, container'
-    adBlockNotice-content: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>
-    adBlockNotice-content-help: Here u can change the content
-    adBlockNotice-content-placeholder: Placeholder text
+    adblock-div: Add the banner tag where the html code appears 
+    adblock-div-placeholder: Ex '#content, .App-content, .IndexPage, container'
+    adblock-img: Img
+    adblock-img-placeholder: https://domain/picture.png
+    adblock-url: Url
+    adblock-url-placeholder: https://domain
+    adblock-alt: Alt
+    adblock-alt-placeholder: Alt attribute in img tag
+    adblock-action: Select notice
+    adblock-action-help: Here u can change, default notice 'message, backup'
+    adblock-action-notice: notice
+    adblock-action-message: message
+    adblock-action-backup: backup
+    adblock-supportUsTitle: Please support us
+    adblock-supportUsTitle-placeholder: Here you can change your Title
+    adblock-supportUsMessage: Please support us by disabling AdBlocker on our website.
+    adblock-supportUsMessage-placeholder: Here u can change the message
+    adblock-supportRedirectUrl: Link
+    adblock-supportRedirectUrl-placeholder: Paste a valid URL here or leave it blank
+    adblock-notice-element: Add Tag where notifications are displayed
+    adblock-notice-element-placeholder: Ex '#content, .App-content, .IndexPage, container'
+    adblock-notice-content: Message content
+    adblock-notice-content-help: Here u can change the content
+    adblock-notice-content-placeholder: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!
+    adblock-notice-content-sup: Supports the above small text message content
+    adblock-notice-content-sup-placeholder: <sup><i>(Press × to turn off notifications and show content.)</i></sup>
