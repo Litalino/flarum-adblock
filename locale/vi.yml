@@ -13,11 +13,11 @@ adblock:
     adblock-action-notice: notice
     adblock-action-message: message
     adblock-action-backup: backup
-    adblock-supportUsTitle: Làm ơn hỗ trợ chúng tôi
-    adblock-supportUsTitle-placeholder: Tại đây bạn có thể thay đổi Tiêu đề của mình
-    adblock-supportUsMessage: Vui lòng hỗ trợ chúng tôi bằng cách tắt AdBlocker trên trang web của chúng tôi.
-    adblock-supportUsMessage-placeholder: Ở đây bạn có thể thay đổi tin nhắn
-    adblock-supportRedirectUrl: Link
+    adblock-supportUsTitle: Support Us Title
+    adblock-supportUsTitle-placeholder: Làm ơn hỗ trợ chúng tôi
+    adblock-supportUsMessage: Support Us Message
+    adblock-supportUsMessage-placeholder: Vui lòng hỗ trợ chúng tôi bằng cách tắt AdBlocker trên trang web của chúng tôi.
+    adblock-supportRedirectUrl: Support Us Link
     adblock-supportRedirectUrl-placeholder: Dán URL hợp lệ vào đây hoặc để trống
     adblock-notice-element: Thêm Tag nơi hiển thị thông báo
     adblock-notice-element-placeholder: Ex '#content, .App-content, .IndexPage, container'

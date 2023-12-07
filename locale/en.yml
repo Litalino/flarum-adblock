@@ -13,11 +13,11 @@ adblock:
     adblock-action-notice: notice
     adblock-action-message: message
     adblock-action-backup: backup
-    adblock-supportUsTitle: Please support us
-    adblock-supportUsTitle-placeholder: Here you can change your Title
-    adblock-supportUsMessage: Please support us by disabling AdBlocker on our website.
-    adblock-supportUsMessage-placeholder: Here u can change the message
-    adblock-supportRedirectUrl: Link
+    adblock-supportUsTitle: Support Us Title
+    adblock-supportUsTitle-placeholder: Please support us
+    adblock-supportUsMessage: Support Us Message
+    adblock-supportUsMessage-placeholder: Please support us by disabling AdBlocker on our website.
+    adblock-supportRedirectUrl: Support Us Link
     adblock-supportRedirectUrl-placeholder: Paste a valid URL here or leave it blank
     adblock-notice-element: Add Tag where notifications are displayed
     adblock-notice-element-placeholder: Ex '#content, .App-content, .IndexPage, container'
