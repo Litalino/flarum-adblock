@@ -9,9 +9,7 @@
 
 A [Flarum](http://flarum.org) extension. Add a Adblock to Flarum, u can customize directly into the extension settings.
 
-### Background
 
-To customize your banner img simply change the `bg.jpg` image into the assets folder
 
 ### Installation
 
