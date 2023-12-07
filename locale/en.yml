@@ -25,4 +25,4 @@ adblock:
     adblock-notice-content-help: Here u can change the content
     adblock-notice-content-placeholder: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!
     adblock-notice-content-sup: Supports the above small text message content
-    adblock-notice-content-sup-placeholder: <sup><i>(Press × to turn off notifications and show content.)</i></sup>
+    adblock-notice-content-sup-placeholder: Press × to turn off notifications and show content.
