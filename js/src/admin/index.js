@@ -52,8 +52,8 @@ app.initializers.add('litalino/flarum-adblock', () => {
       type: 'select',
       options: {
 				'notice': app.translator.trans('adblock.admin.adblock-action-notice'),
-				'message': app.translator.trans('adblock.admin.adblock-action-message'),
-				'backup': app.translator.trans('adblock.admin.adblock-action-backup'),
+				//'message': app.translator.trans('adblock.admin.adblock-action-message'),
+				//'backup': app.translator.trans('adblock.admin.adblock-action-backup'),
 			},
       default: 'notice',
     })
