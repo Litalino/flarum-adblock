@@ -160,7 +160,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
                         if (adBlockNotice.views && adBlockNotice.views > pageViewCount) {
                             canDisplayNotice = false;
                         }
-                        console.log('adsBlocked : '+ adsBlocked );
+                        //console.log('adsBlocked : '+ adsBlocked );
                         //console.log(canDisplayNotice);
 
                         if (! adsBlocked && canDisplayNotice) {
