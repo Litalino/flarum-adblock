@@ -29,12 +29,12 @@ app.initializers.add('litalino/flarum-adblock', () => {
             /////////////////////
             const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-adblock/banner.png';
             const url = app.forum.attribute('baseUrl');
-            const alt = app.translator.trans('adblock.admin.adblock-alt');
+            const alt = 'Ads';
 
             const adBlock_div = app.forum.attribute('litalino-adblock.adblock-div') ? app.forum.attribute('litalino-adblock.adblock-div') : 'content' ;
             const adBlock_url = app.forum.attribute('litalino-adblock.adblock-url') ? app.forum.attribute('litalino-adblock.adblock-url') : url ;
             const adBlock_img = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-img') : img ;
-            const adBlock_alt = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-alt') : alt ;
+            const adBlock_alt = app.forum.attribute('litalino-adblock.adblock-alt') ? app.forum.attribute('litalino-adblock.adblock-alt') : alt ;
 
             var my_div = document.getElementById(''+ adBlock_div +'');
             //var my_div = document.querySelectorAll('' + adBlock_div + '');
