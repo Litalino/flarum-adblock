@@ -205,7 +205,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
                                     notice.appendTo(adBlockNotice.element);
 
                                 } else {
-                                    console.log(notice);
+                                    //console.log(notice);
                                     //notice.prependTo(adBlockNotice.element);
                                     //console.log(notice[0].outerHTML);
                                     //const c1_text = notice[0].innerHTML.replace(/>/g, "&gt;");
@@ -271,17 +271,20 @@ app.initializers.add('litalino/flarum-adblock', () => {
 
             function create_adblock_Cookie(name, value, days) {
                 if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                var expires = "; expires=" + date.toGMTString();
+                    var date = new Date();
+                    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                    var expires = "; expires=" + date.toGMTString();
                 } else {
                     var expires = '';
                 }
-                //var expires = '';
-                //document.cookie = name + '=' + value + expires + '; path=/';
-                //document.cookie = name + "=" + value + expires + "sameSite=Lax; Secure"; path=/";
-                //const path = require("path")
-                document.cookie = name + '=' + value + '; ' + expires + '; ' + 'Secure'; path='/';
+                //var expires = (expires != nul) ? "; expires=" + expires : "";
+                var path = (path != null) ? "; path=" + path : "";
+                //var domain = (domain != null) ? "; domain=" + domain : "";
+                //var secure = (secure != null) ? "; secure" : "";
+                var secure = "; secure";
+
+                //document.cookie = name + "=" + escape(value) + expires + path + domain + secure;
+                document.cookie = name + "=" + escape(value) + expires + path + secure;
             }
 
             function read_adblock_Cookie(name) {
