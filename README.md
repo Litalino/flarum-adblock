@@ -32,3 +32,4 @@ php flarum cache:clear
 
 - [Packagist](https://packagist.org/packages/litalino/flarum-adblock)
 - [GitHub](https://github.com/litalino/flarum-adblock)
+- [Discuss](https://discuss.flarum.org/d/33757-adblock-extension)
