@@ -16,10 +16,15 @@ app.initializers.add('litalino/flarum-adblock', () => {
     .registerSetting({
       setting: 'litalino-adblock.adblock-div',
       name: 'litalino-adblock.adblock-div',
-      type: 'text',
+      //type: 'text',
       label: app.translator.trans('adblock.admin.adblock-div'),
-      placeholder: app.translator.trans('adblock.admin.adblock-div-placeholder'),
-      default: '',
+      //placeholder: app.translator.trans('adblock.admin.adblock-div-placeholder'),
+      //default: '',
+      type: 'select',
+      options: {
+				'content': 'content',
+			},
+      default: 'content',
     })
     .registerSetting({
       setting: 'litalino-adblock.adblock-img',
@@ -84,10 +89,15 @@ app.initializers.add('litalino/flarum-adblock', () => {
     .registerSetting({
       setting: 'litalino-adblock.adblock-notice-element',
       name: 'litalino-adblock.adblock-notice-element',
-      type: 'text',
+      //type: 'text',
       label: app.translator.trans('adblock.admin.adblock-notice-element'),
-      placeholder: app.translator.trans('adblock.admin.adblock-notice-element-placeholder'),
-      default: '',
+      //placeholder: app.translator.trans('adblock.admin.adblock-notice-element-placeholder'),
+      //default: '',
+      type: 'select',
+      options: {
+				'content': '#content',
+			},
+      default: 'content',
     })
     .registerSetting({
       setting: 'litalino-adblock.adblock-notice-content',

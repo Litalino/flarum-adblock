@@ -38,6 +38,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
 
             var my_div = document.getElementById(''+ adBlock_div +'');
             //var my_div = document.querySelectorAll('' + adBlock_div + '');
+            //var my_div = document.getElementsByClassName(''+ adBlock_div +'');
             //console.log( my_div );
             if (my_div) {
 
@@ -46,6 +47,8 @@ app.initializers.add('litalino/flarum-adblock', () => {
                 tag_div.className = 'samBannerUnit samAlignCenter';
 
                 my_div.parentNode.insertBefore(tag_div, my_div);
+                //$( tag_div ).insertBefore( my_div );
+
             }
 
             /////////////////////
