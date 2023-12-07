@@ -31,13 +31,14 @@ app.initializers.add('litalino/flarum-adblock', () => {
             const url = app.forum.attribute('baseUrl');
             const alt = 'Ads';
 
-            const adBlock_div = app.forum.attribute('litalino-adblock.adblock-div') ? app.forum.attribute('litalino-adblock.adblock-div') : 'content' ;
+            const adBlock_div = app.forum.attribute('litalino-adblock.adblock-div') ? app.forum.attribute('litalino-adblock.adblock-div') : '#content' ;
             const adBlock_url = app.forum.attribute('litalino-adblock.adblock-url') ? app.forum.attribute('litalino-adblock.adblock-url') : url ;
             const adBlock_img = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-img') : img ;
             const adBlock_alt = app.forum.attribute('litalino-adblock.adblock-alt') ? app.forum.attribute('litalino-adblock.adblock-alt') : alt ;
 
-            var my_div = document.getElementById(''+ adBlock_div +'');
-            //var my_div = document.querySelectorAll('' + adBlock_div + '');
+            //console.log( adBlock_div );
+            //var my_div = document.getElementById(''+ adBlock_div +'');
+            var my_div = document.querySelector("" + adBlock_div + "");
             //var my_div = document.getElementsByClassName(''+ adBlock_div +'');
             //console.log( my_div );
             if (my_div) {
@@ -46,8 +47,8 @@ app.initializers.add('litalino/flarum-adblock', () => {
                 tag_div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
                 tag_div.className = 'samBannerUnit samAlignCenter';
 
-                my_div.parentNode.insertBefore(tag_div, my_div);
-                //$( tag_div ).insertBefore( my_div );
+                //my_div.parentNode.insertBefore(tag_div, my_div);
+                $( tag_div ).insertBefore( my_div );
 
             }
 

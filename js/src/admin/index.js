@@ -22,7 +22,9 @@ app.initializers.add('litalino/flarum-adblock', () => {
       //default: '',
       type: 'select',
       options: {
-				'content': 'content',
+        '#content': '#content',
+        '.sideNavContainer': '.sideNavContainer',
+				'.IndexPage-toolbar': '.IndexPage-toolbar',
 			},
       default: 'content',
     })
