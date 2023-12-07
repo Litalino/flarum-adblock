@@ -43,5 +43,7 @@ return [
     (new Extend\Settings)
         ->serializeToForum('litalino-adblock.adblock-notice-element', 'litalino-adblock.adblock-notice-element'),
     (new Extend\Settings)
+        ->serializeToForum('litalino-adblock.adblock-notice-method', 'litalino-adblock.adblock-notice-method'),
+    (new Extend\Settings)
         ->serializeToForum('litalino-adblock.adblock-notice-content', 'litalino-adblock.adblock-notice-content'),
 ];

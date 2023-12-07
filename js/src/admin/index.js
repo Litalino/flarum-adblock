@@ -102,6 +102,18 @@ app.initializers.add('litalino/flarum-adblock', () => {
       default: 'content',
     })
     .registerSetting({
+      setting: 'litalino-adblock.adblock-notice-method',
+      name: 'litalino-adblock.adblock-notice-method',
+      label: app.translator.trans('adblock.admin.adblock-notice-method'),
+      type: 'select',
+      options: {
+				'prepend': 'prepend',
+				'append': 'append',
+				'alert': 'alert',
+			},
+      default: 'alert',
+    })
+    .registerSetting({
       setting: 'litalino-adblock.adblock-notice-content',
       name: 'litalino-adblock.adblock-notice-content',
       type: 'textarea',

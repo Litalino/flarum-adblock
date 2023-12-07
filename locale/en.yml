@@ -21,6 +21,8 @@ adblock:
     adblock-supportRedirectUrl-placeholder: Paste a valid URL here or leave it blank
     adblock-notice-element: Add Tag where notifications are displayed
     adblock-notice-element-placeholder: Ex '#content, .App-content, .IndexPage, container'
+    adblock-notice-method: Style notice
+    adblock-notice-method-help: Here you can change the Notification style
     adblock-notice-content: Message content
     adblock-notice-content-help: Here u can change the content
     adblock-notice-content-placeholder: Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!

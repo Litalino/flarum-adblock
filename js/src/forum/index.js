@@ -11,6 +11,7 @@
 import { extend } from 'flarum/extend';
 import app from 'flarum/app';
 import IndexPage from 'flarum/forum/components/IndexPage';
+import Alert from "flarum/common/components/Alert";
 
 app.initializers.add('litalino/flarum-adblock', () => {
 
@@ -58,6 +59,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
             var text_supportUsMessage = 'Please support us by disabling AdBlocker on our website.';
             var text_url = '';
             var text_element = "#content";
+            var text_method = "alert";
             var text_content_sup = 'Press × to turn off notifications and show content.';
             var text_content =
               "Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!";
@@ -69,6 +71,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
             const adBlock_supportUsMessage = app.forum.attribute('litalino-adblock.adblock-supportUsMessage') ? app.forum.attribute('litalino-adblock.adblock-supportUsMessage') :text_supportUsMessage ;
             const adBlock_supportRedirectUrl = app.forum.attribute('litalino-adblock.adblock-supportRedirectUrl') ? app.forum.attribute('litalino-adblock.adblock-supportRedirectUrl') : text_url ;
             const adBlock_notice_element = app.forum.attribute('litalino-adblock.adblock-notice-element') ? app.forum.attribute('litalino-adblock.adblock-notice-element') : text_element ;
+            const adBlock_notice_method = app.forum.attribute('litalino-adblock.adblock-notice-method') ? app.forum.attribute('litalino-adblock.adblock-notice-method') : text_method ;
             const adBlock_notice_content = app.forum.attribute('litalino-adblock.adblock-notice-content') ? app.forum.attribute('litalino-adblock.adblock-notice-content') + adBlock_notice_content_sup : text_content + adBlock_notice_content_sup ;
             //const adBlock_notice_method = app.forum.attribute('litalino-adblock.adblock-notice-method') ? app.forum.attribute('litalino-adblock.adblock-notice-method') : 'prepend' ;
             //const adBlock_notice_interval = app.forum.attribute('litalino-adblock.adblock-notice-interval') ? app.forum.attribute('litalino-adblock.adblock-notice-interval') : '1440' ;
@@ -79,7 +82,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
             var supportRedirectUrl = adBlock_supportRedirectUrl; //"";
             var adBlockNotice = {
                 element: adBlock_notice_element, //'#content',
-                method: 'prepend',
+                method: adBlock_notice_method,
                 content: adBlock_notice_content, //"Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
                 interval: 1440,
                 views: 1
@@ -168,7 +171,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
                             if (adBlockAction == 'notice') {
                                 //console.log( 'adBlockNotice.interval :  '+adBlockNotice.interval    );
                                 //var dismissCookieTime = adBlockNotice.interval ? XF.Cookie.get('sam_notice_dismiss') : false;
-                                var dismissCookieTime = adBlockNotice.interval ? read_adblock_Cookie('adblok_sam_notice_dismiss') : false;
+                                var dismissCookieTime = adBlockNotice.interval ? read_adblock_Cookie('adblock_sam_notice_dismiss') : false;
                                 //console.log( 'dismissCookieTime:  '+dismissCookieTime   );
                                 //console.log( 'adBlockNotice.interval * 60:  '+ (adBlockNotice.interval * 60)  );
                                 if (dismissCookieTime && (Math.floor(Date.now() / 1000) - dismissCookieTime <= (adBlockNotice.interval * 60)))
@@ -197,8 +200,18 @@ app.initializers.add('litalino/flarum-adblock', () => {
                                 //console.log(adBlockNotice.method );
                                 if (adBlockNotice.method == 'prepend') {
                                     notice.prependTo(adBlockNotice.element);
-                                } else {
+
+                                } else if (adBlockNotice.method == 'append') {
                                     notice.appendTo(adBlockNotice.element);
+
+                                } else {
+                                    console.log(notice);
+                                    //notice.prependTo(adBlockNotice.element);
+                                    //console.log(notice[0].outerHTML);
+                                    //const c1_text = notice[0].innerHTML.replace(/>/g, "&gt;");
+                                    //const c2_text = c1_text.replace(/</g, "&lt;");
+                                    const notice_text = notice[0].outerText;
+                                    app.alerts.show(Alert, { type: 'error' }, notice_text);
                                 }
                                 notice.fadeIn('slow');
                                 //XF.activate(notice);
@@ -231,13 +244,23 @@ app.initializers.add('litalino/flarum-adblock', () => {
                     }
                 }
             }
+            
+            $(document).on('click', '.samAdBlockDetected #alerts .Alert-controls', function() {
+                //$(this).parent('#samNotice').fadeOut();
+                $('body').removeClass('samAdBlockDetected');
+                //XF.Cookie.set('sam_notice_dismiss', Math.floor(Date.now() / 1000));
+                var value = Math.floor(Date.now() / 1000);
+                //create_adblock_Cookie('adblock_sam_notice_dismiss', 'true', '30')
+                create_adblock_Cookie('adblock_sam_notice_dismiss', value, null)
+
+            });
             $(document).on('click', '#samDismiss', function() {
                 $(this).parent('#samNotice').fadeOut();
                 $('body').removeClass('samAdBlockDetected');
                 //XF.Cookie.set('sam_notice_dismiss', Math.floor(Date.now() / 1000));
                 var value = Math.floor(Date.now() / 1000);
-                //create_adblock_Cookie('adblok_sam_notice_dismiss', 'true', '30')
-                create_adblock_Cookie('adblok_sam_notice_dismiss', value, null)
+                //create_adblock_Cookie('adblock_sam_notice_dismiss', 'true', '30')
+                create_adblock_Cookie('adblock_sam_notice_dismiss', value, null)
 
             });
             $(document).on('samInitDetection', function() {
@@ -256,8 +279,9 @@ app.initializers.add('litalino/flarum-adblock', () => {
                 }
                 //var expires = '';
                 //document.cookie = name + '=' + value + expires + '; path=/';
-                //document.cookie = name + "=" + value + expires + "sameSite=Session; Secure"; path=/";
-                document.cookie = name + '=' + value + '; ' + expires + '; ' + 'sameSite=Session; Secure'; path='/';
+                //document.cookie = name + "=" + value + expires + "sameSite=Lax; Secure"; path=/";
+                //const path = require("path")
+                document.cookie = name + '=' + value + '; ' + expires + '; ' + 'Secure'; path='/';
             }
 
             function read_adblock_Cookie(name) {
