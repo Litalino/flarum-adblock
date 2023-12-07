@@ -22,7 +22,7 @@
   "support": {
     "issues": "https://github.com/litalino/flarum-adblock/issues",
     "source": "https://github.com/litalino/flarum-adblock",
-    "forum": "https://discuss.flarum.org/d/33616-adblock-extension"
+    "forum": "https://discuss.flarum.org/d/33757-adblock-extension"
   },
   "autoload": {
     "psr-4": {
@@ -66,10 +66,10 @@
     }
   },
   "repositories": [
-      {
-          "type": "path",
-          "url": "../../*/*"
-      }
+    {
+      "type": "path",
+      "url": "../../*/*"
+    }
   ],
   "require-dev": {
     "flarum/phpstan": "*"
