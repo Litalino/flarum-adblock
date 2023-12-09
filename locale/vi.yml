@@ -25,6 +25,9 @@ adblock:
     adblock-notice-method-help: Tại đây bạn có thể thay đổi kiểu Thông báo
     adblock-notice-content: Nội dung thông báo
     adblock-notice-content-help: Ở đây bạn có thể thay đổi nội dung
-    adblock-notice-content-placeholder: CHÀO. Bạn có thể vui lòng giúp chúng tôi không?\n\nTôi biết quảng cáo đôi khi quá khó chịu và bạn muốn sử dụng Adblock. Nhưng hãy ủng hộ chúng tôi bằng cách thêm KhatVongSong vào danh sách trắng. Nó sẽ giúp chúng tôi sử dụng KhatVongSong miễn phí.\n\nCảm ơn sự giúp đỡ của bạn!
+    adblock-notice-content-placeholder: CHÀO. Bạn có thể vui lòng giúp chúng tôi không? Tôi biết quảng cáo đôi khi quá khó chịu và bạn muốn sử dụng Adblock. Nhưng hãy ủng hộ chúng tôi bằng cách thêm Webiste vào danh sách trắng. Nó sẽ giúp chúng tôi sử dụng Webiste miễn phí. Cảm ơn sự giúp đỡ của bạn!
     adblock-notice-content-sup: Hỗ trợ nội dung tin nhắn văn bản nhỏ ở trên
     adblock-notice-content-sup-placeholder: Nhấn × để tắt thông báo và hiển thị nội dung.
+  forum:
+    adblock-notice-content: CHÀO. Bạn có thể vui lòng giúp chúng tôi không? Tôi biết quảng cáo đôi khi quá khó chịu và bạn muốn sử dụng Adblock. Nhưng hãy ủng hộ chúng tôi bằng cách thêm Webiste vào danh sách trắng. Nó sẽ giúp chúng tôi sử dụng Webiste miễn phí. Cảm ơn sự giúp đỡ của bạn!
+    adblock-notice-content-sup: Nhấn × để tắt thông báo và hiển thị nội dung.

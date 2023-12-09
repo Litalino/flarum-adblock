@@ -25,6 +25,12 @@ composer require litalino/flarum-adblock:"*"
 composer update litalino/flarum-adblock:"*"
 php flarum cache:clear
 ```
+### Remove
+
+```sh
+composer remove litalino/flarum-adblock
+php flarum cache:clear
+```
 
 ### Links
 

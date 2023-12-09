@@ -16,10 +16,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
     .registerSetting({
       setting: 'litalino-adblock.adblock-div',
       name: 'litalino-adblock.adblock-div',
-      //type: 'text',
       label: app.translator.trans('adblock.admin.adblock-div'),
-      //placeholder: app.translator.trans('adblock.admin.adblock-div-placeholder'),
-      //default: '',
       type: 'select',
       options: {
         '#content': '#content',
@@ -52,6 +49,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
       placeholder: app.translator.trans('adblock.admin.adblock-alt-placeholder'),
       default: '',
     })
+    /**
     .registerSetting({
       label: app.translator.trans('adblock.admin.adblock-action'),
       help: app.translator.trans('adblock.admin.adblock-action-help'),
@@ -64,6 +62,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
 			},
       default: 'notice',
     })
+    */
     .registerSetting({
       setting: 'litalino-adblock.adblock-supportUsTitle',
       name: 'litalino-adblock.adblock-supportUsTitle',
@@ -88,19 +87,18 @@ app.initializers.add('litalino/flarum-adblock', () => {
       placeholder: app.translator.trans('adblock.admin.adblock-supportRedirectUrl-placeholder'),
       default: '',
     })
+    /**
     .registerSetting({
       setting: 'litalino-adblock.adblock-notice-element',
       name: 'litalino-adblock.adblock-notice-element',
-      //type: 'text',
       label: app.translator.trans('adblock.admin.adblock-notice-element'),
-      //placeholder: app.translator.trans('adblock.admin.adblock-notice-element-placeholder'),
-      //default: '',
       type: 'select',
       options: {
 				'content': '#content',
 			},
       default: 'content',
     })
+    */
     .registerSetting({
       setting: 'litalino-adblock.adblock-notice-method',
       name: 'litalino-adblock.adblock-notice-method',

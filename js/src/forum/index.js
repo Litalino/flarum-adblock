@@ -25,7 +25,6 @@ app.initializers.add('litalino/flarum-adblock', () => {
         XF.samBannerUnit = ".samBannerUnit";
 
         document.addEventListener("DOMContentLoaded", function() {
-            //window.onload = function () {
 
             /////////////////////
             const img = app.forum.attribute('baseUrl') + '/assets/extensions/litalino-adblock/banner.png';
@@ -37,17 +36,13 @@ app.initializers.add('litalino/flarum-adblock', () => {
             const adBlock_img = app.forum.attribute('litalino-adblock.adblock-img') ? app.forum.attribute('litalino-adblock.adblock-img') : img ;
             const adBlock_alt = app.forum.attribute('litalino-adblock.adblock-alt') ? app.forum.attribute('litalino-adblock.adblock-alt') : alt ;
 
-            //console.log( adBlock_div );
             //var my_div = document.getElementById(''+ adBlock_div +'');
             var my_div = document.querySelector("" + adBlock_div + "");
-            //var my_div = document.getElementsByClassName(''+ adBlock_div +'');
-            //console.log( my_div );
             if (my_div) {
 
                 var tag_div = document.createElement('div');
                 tag_div.innerHTML = '<div class="samItem"> <a href="'+ adBlock_url +'" target="_blank" rel="nofollow"> <img src="'+ adBlock_img +'" title="'+ adBlock_alt +'" alt="'+ adBlock_alt +'"> </a> </div>';
                 tag_div.className = 'samBannerUnit samAlignCenter';
-
                 //my_div.parentNode.insertBefore(tag_div, my_div);
                 $( tag_div ).insertBefore( my_div );
 
@@ -60,12 +55,9 @@ app.initializers.add('litalino/flarum-adblock', () => {
             var text_url = '';
             var text_element = "#content";
             var text_method = "alert";
-            var text_content_sup = 'Press × to turn off notifications and show content.';
-            var text_content =
-              "Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help!";
-
-            var adBlock_notice_content_sup = app.forum.attribute('litalino-adblock.adblock-notice-content-sup') ? ' <sup><i>('+ app.forum.attribute('litalino-adblock.adblock-notice-content-sup') +')</i></sup>' : ' <sup><i>('+ text_content_sup +')</i></sup>';
-
+            const text_content = app.translator.trans('adblock.forum.adblock-notice-content');
+            const text_content_sup = app.translator.trans('adblock.forum.adblock-notice-content-sup');
+            const adBlock_notice_content_sup = app.forum.attribute('litalino-adblock.adblock-notice-content-sup') ? ' <sup><i>('+ app.forum.attribute('litalino-adblock.adblock-notice-content-sup') +')</i></sup>' : ' <sup><i>('+ text_content_sup +')</i></sup>';
             const adBlock_action = app.forum.attribute('litalino-adblock.adblock-action') ? app.forum.attribute('litalino-adblock.adblock-action') : text_notice ;
             const adBlock_supportUsTitle = app.forum.attribute('litalino-adblock.adblock-supportUsTitle') ? app.forum.attribute('litalino-adblock.adblock-supportUsTitle') : text_supportUsTitle ;
             const adBlock_supportUsMessage = app.forum.attribute('litalino-adblock.adblock-supportUsMessage') ? app.forum.attribute('litalino-adblock.adblock-supportUsMessage') :text_supportUsMessage ;
@@ -73,8 +65,6 @@ app.initializers.add('litalino/flarum-adblock', () => {
             const adBlock_notice_element = app.forum.attribute('litalino-adblock.adblock-notice-element') ? app.forum.attribute('litalino-adblock.adblock-notice-element') : text_element ;
             const adBlock_notice_method = app.forum.attribute('litalino-adblock.adblock-notice-method') ? app.forum.attribute('litalino-adblock.adblock-notice-method') : text_method ;
             const adBlock_notice_content = app.forum.attribute('litalino-adblock.adblock-notice-content') ? app.forum.attribute('litalino-adblock.adblock-notice-content') + adBlock_notice_content_sup : text_content + adBlock_notice_content_sup ;
-            //const adBlock_notice_method = app.forum.attribute('litalino-adblock.adblock-notice-method') ? app.forum.attribute('litalino-adblock.adblock-notice-method') : 'prepend' ;
-            //const adBlock_notice_interval = app.forum.attribute('litalino-adblock.adblock-notice-interval') ? app.forum.attribute('litalino-adblock.adblock-notice-interval') : '1440' ;
 
             var adBlockAction = adBlock_action; //"notice";
             var supportUsTitle = adBlock_supportUsTitle; //"Please support us";
@@ -82,7 +72,7 @@ app.initializers.add('litalino/flarum-adblock', () => {
             var supportRedirectUrl = adBlock_supportRedirectUrl; //"";
             var adBlockNotice = {
                 element: adBlock_notice_element, //'#content',
-                method: adBlock_notice_method,
+                method: adBlock_notice_method, //'append',
                 content: adBlock_notice_content, //"Hi. Can you please help us?\n\nI know the ads sometimes are too annoying and you want to use Adblock. But please support us by adding KhatVongSong to the whitelist. It will help us keep KhatVongSong free to use.\n\nThanks for your help! <sup><i>(Press × to turn off notifications and show content.)</i></sup>",
                 interval: 1440,
                 views: 1
@@ -92,14 +82,11 @@ app.initializers.add('litalino/flarum-adblock', () => {
                     return true;
                 }
                 var adminActions = ad.find('.samAdminActions');
-                //console.log( adminActions );
                 var ignoreContent = ad.find('.samIgnoreContent');
-                //console.log( ignoreContent );
                 var adsenseUnit = ad.find('ins.adsbygoogle');
-                //console.log( adsenseUnit );
                 var googleTagUnit = ad.find('[id^="div-gpt-ad"]');
-                //console.log( googleTagUnit );
                 var ignoredHeight = 0;
+
                 if (adminActions.length) {
                     ignoredHeight += adminActions.height();
                 }
@@ -117,21 +104,16 @@ app.initializers.add('litalino/flarum-adblock', () => {
                         return false;
                     }
                 }
-                //console.log( ad.height());
-                //console.log( ignoredHeight);
+
                 return (ad.height() - ignoredHeight) > 0;
             }
             function initDetection() {
                 XF.samCoreLoaded = true;
                 $('<div class="banner_728x90 ad-banner" />').appendTo('body');
                 var adUnits = $(XF.samCodeUnit + ' ' + XF.samItem + ':not(.samLazyLoading)' + ',' + XF.samBannerUnit + ' ' + XF.samItem + ':not(.samLazyLoading)');
-                //var adUnits = $(XF.samBannerUnit);
-                //var adUnits = $('.samBannerUnit');
-                //console.log('adUnits: '+ adUnits.length);
-                //console.log('adUnits: '+ adUnits.length);
+
                 //if (adUnits.length && ($('.banner_728x90.ad-banner').is(':hidden') || XF.samCoreLoaded === undefined)) {
                 if (adUnits.length && $('.banner_728x90.ad-banner').is(':hidden')) {
-                //console.log('adBlockAction: '+ adBlockAction );
                     if (adBlockAction == 'backup' || adBlockAction == 'message') {
                         adUnits.each(function() {
                             if (!hasContentHeight($(this)) && $(this).find('> a img[data-src]').length == 0) {
@@ -150,54 +132,36 @@ app.initializers.add('litalino/flarum-adblock', () => {
                         });
                     } else {
                         var adsBlocked = 0;
-                        //console.log('hasContentHeight: '+ hasContentHeight($(this)));
                         adUnits.each(function() {
                             if (!hasContentHeight($(this))) {
                                 adsBlocked += 1;
                             };
                         });
 
-                        //console.log('adsBlocked : '+ adsBlocked );
                         var canDisplayNotice = true;
                         var pageViewCount = 2;
-                        //console.log('adBlockNotice.views: '+ adBlockNotice.views );
+
                         if (adBlockNotice.views && adBlockNotice.views > pageViewCount) {
                             canDisplayNotice = false;
                         }
-                        //console.log('adsBlocked : '+ adsBlocked );
-                        //console.log(canDisplayNotice);
 
                         if (! adsBlocked && canDisplayNotice) {
                             if (adBlockAction == 'notice') {
-                                //console.log( 'adBlockNotice.interval :  '+adBlockNotice.interval    );
                                 //var dismissCookieTime = adBlockNotice.interval ? XF.Cookie.get('sam_notice_dismiss') : false;
                                 var dismissCookieTime = adBlockNotice.interval ? read_adblock_Cookie('adblock_sam_notice_dismiss') : false;
-                                //console.log( 'dismissCookieTime:  '+dismissCookieTime   );
-                                //console.log( 'adBlockNotice.interval * 60:  '+ (adBlockNotice.interval * 60)  );
                                 if (dismissCookieTime && (Math.floor(Date.now() / 1000) - dismissCookieTime <= (adBlockNotice.interval * 60)))
-
-                                //console.log( 'adBlockNotice.interval: '+ adBlockNotice.interval  );
-                                //console.log( 'Math.floor(Date.now() / 1000): ' + Math.floor(Date.now() / 1000) );
-                                //var dismissCookieTime = adBlockNotice.interval ? readCookie('sam_notice_dismiss') : false;
-                                //console.log( 'dismissCookieTime:  '+dismissCookieTime   );
-                                //console.log( 'adBlockNotice.interval * 60:  '+ (adBlockNotice.interval * 60)  );
-                                //console.log( 'Math.floor(Date.now() / 1000) - dismissCookieTime: '+ (Math.floor(Date.now() / 1000) - dismissCookieTime_ ) );
-                                //console.log( Math.floor(Date.now() / 1000) - dismissCookieTime <= (adBlockNotice.interval * 60));
-                                //if (dismissCookieTime)
-
                                 {
                                     return;
                                 }
+
                                 var content = supportUsMessage;
-                                //console.log(content );
-                                //console.log(adBlockNotice.content);
                                 if (adBlockNotice.content) {
                                     content = adBlockNotice.content;
                                 }
+
                                 var notice = $('<div id="samNotice" />');
                                 notice.prepend('<a role="button" id="samDismiss">×</a>');
                                 notice.append('<span>' + content + '</span>');
-                                //console.log(adBlockNotice.method );
                                 if (adBlockNotice.method == 'prepend') {
                                     notice.prependTo(adBlockNotice.element);
 
@@ -205,13 +169,9 @@ app.initializers.add('litalino/flarum-adblock', () => {
                                     notice.appendTo(adBlockNotice.element);
 
                                 } else {
-                                    //console.log(notice);
-                                    //notice.prependTo(adBlockNotice.element);
-                                    //console.log(notice[0].outerHTML);
-                                    //const c1_text = notice[0].innerHTML.replace(/>/g, "&gt;");
-                                    //const c2_text = c1_text.replace(/</g, "&lt;");
                                     const notice_text = notice[0].outerText;
                                     app.alerts.show(Alert, { type: 'error' }, notice_text);
+
                                 }
                                 notice.fadeIn('slow');
                                 //XF.activate(notice);
